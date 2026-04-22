@@ -31,4 +31,19 @@ http://localhost:8081
 **Flag Formatı:** `ALTAYSEC{IP_PARAMETRE_DOSYA}`
 
 ---
+
+# 🛡️ Level 2: BASE64 (Intermediate)
+
+**Senaryo:** Bir saldırgan `/admin` paneline girmeye çalışıyor. IP engeline takılmamak için sürekli proxy değiştiriyor ancak arkasında kritik bir iz bırakıyor. Sisteme sızdıktan sonra çalıştırdığı zararlı komutu ise Base64 ile şifrelemiş.
+
+**Görevler:**
+1. Saldırganın sabit kalan User-Agent'ını bul.
+2. Başarılı giriş yapılan (302 Redirect) IP'yi tespit et.
+3. cmd parametresindeki Base64 komutu decode et.
+
+**Öğrenim Çıktıları:**
+* Karmaşık log dosyalarında `awk` ve `grep` kombinasyonları ile anomali tespiti.
+* User-Agent analizi ve Brute-Force tespiti.
+* Terminal üzerinden Base64 şifre çözümü (Deobfuscation).
+
 *Developed by Emir - AltaySec Lab Researcher*
