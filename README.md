@@ -46,4 +46,16 @@ http://localhost:8081
 * User-Agent analizi ve Brute-Force tespiti.
 * Terminal üzerinden Base64 şifre çözümü (Deobfuscation).
 
+---
+
+# 🛡️ Seviye 3: Gizlilik Operasyonu (Web ve İşletim Sistemi Log Korelasyonu)
+**Odak Noktası:** Olay Müdahale (DFIR), Log Korelasyonu, Dosyasız (Fileless) Yürütme Analizi, Base64 Deşifreleme.
+
+**Senaryo:** Gelişmiş bir tehdit aktörü, sisteme ters bağlantı (reverse shell) açmak için resim dosyası görünümünde gizli bir web shell yükler. SOC analisti, saldırganın ilk giriş anından itibaren kodlanmış `curl` komutlarıyla veri sızdırmasına kadar olan ayak izlerini takip etmek için `access.log` (L7) ile `system_audit.log` (L4/L3) dosyalarını birbirleriyle ilişkilendirmelidir (korelasyon).
+
+**Kazanımlar:**
+- Web servislerinden (`www-data`) işletim sistemi seviyesine geçişin ve komut yürütme adımlarının izlenmesi.
+- Sistem denetim (audit) loglarından gizlenmiş (obfuscated) zararlı yüklerin deşifre edilmesi.
+- Komuta Kontrol (C2) IP adreslerinin ve sızdırılan hassas veri bayraklarının (Flag) tespit edilmesi.
+
 *Developed by Emir - AltaySec Lab Researcher*
