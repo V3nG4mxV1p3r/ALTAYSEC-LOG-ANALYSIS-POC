@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y wget curl nano grep gawk && \
 WORKDIR /home/analyst
 
 COPY access.log /home/analyst/access.log
-RUN echo "GOREV: access.log dosyasini incele. Saldirgan IP'sini, kullanilan parametreyi (page=...) ve okunan dosyayi bul. Flag formati: ALTAYSEC{IP_PARAMETRE_DOSYA}" > gorev.txt
+RUN echo "LEVEL 1: RECON & BRUTE FORCE \n\nGOREV: access.log dosyasini incele. \n1- /admin/login.php sayfasina yonelik POST isteklerini (Brute Force) bul. \n2- Basarili olan girisi (HTTP 302) tespit et. \n\nFlag, basarili olan log satirinin (User-Agent kisminin) icinde gizlidir!" > gorev.txt
 
 EXPOSE 80
 
